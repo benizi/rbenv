@@ -15,5 +15,5 @@ _rbenv() {
     completions="$(rbenv completions ${words[2,-1]})"
   fi
 
-  reply=("${(ps:\n:)completions}")
+  (( $#completions )) && reply=( "${(f)completions}" )
 }
